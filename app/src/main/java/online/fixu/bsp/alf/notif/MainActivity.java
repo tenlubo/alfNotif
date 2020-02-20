@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int NOTIFICATION_ID = 888;
 
     // RelativeLayout required for SnackBars to alert users when Notifications are disabled for app.
-//    private RelativeLayout mMainRelativeLayout;
+    private RelativeLayout mMainRelativeLayout;
 
     private NotificationManagerCompat mNotificationManagerCompat;
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        mMainRelativeLayout = (RelativeLayout) findViewById(R.id.mainRelativeLayout);
+        mMainRelativeLayout = (RelativeLayout) findViewById(R.id.mainRelativeLayout);
         mNotificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
 
 
@@ -42,26 +42,14 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG, "onClick()");
 
-//        boolean areNotificationsEnabled = mNotificationManagerCompat.areNotificationsEnabled();
+        boolean areNotificationsEnabled = mNotificationManagerCompat.areNotificationsEnabled();
 
-//        if (!areNotificationsEnabled) {
-//            // Because the user took an action to create a notification, we create a prompt to let
-//            // the user re-enable notifications for this application again.
-//            Snackbar snackbar = Snackbar
-//                    .make(
-//                            mMainRelativeLayout,
-//                            "You need to enable notifications for this app",
-//                            Snackbar.LENGTH_LONG)
-//                    .setAction("ENABLE", new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            // Links to this app's notification settings
-//                            openNotificationSettingsForApp();
-//                        }
-//                    });
-//            snackbar.show();
-//            return;
-//        }
+        if (!areNotificationsEnabled) {
+            // Because the user took an action to create a notification, we create a prompt to let
+            // the user re-enable notifications for this application again.
+            openNotificationSettingsForApp();
+            return;
+        }
         generateBigTextStyleNotification();
     }
 

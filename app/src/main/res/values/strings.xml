@@ -5,4 +5,7 @@
         This Bike Fixu Activity would handle the reminder app\'s functionality.
         \n\nThe notification type for this example was the Big Text Style!
     </string>
+
+    <string name="title_activity_big_text_main">BigTextStyle Main Activity</string>
+    <string name="title_activity_enable_notification">Enable Notification</string>
 </resources>
