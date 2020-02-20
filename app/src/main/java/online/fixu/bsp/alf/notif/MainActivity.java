@@ -21,9 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int NOTIFICATION_ID = 888;
 
-    // RelativeLayout required for SnackBars to alert users when Notifications are disabled for app.
-    private RelativeLayout mMainRelativeLayout;
-
     private NotificationManagerCompat mNotificationManagerCompat;
 
     @Override
@@ -31,9 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mMainRelativeLayout = (RelativeLayout) findViewById(R.id.mainRelativeLayout);
         mNotificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
-
 
     }
 

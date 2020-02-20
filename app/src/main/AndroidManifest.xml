@@ -24,13 +24,6 @@
             android:taskAffinity="">
         </activity>
 
-        <activity
-            android:name=".EnableNotificationActivity"
-            android:excludeFromRecents="true"
-            android:label="@string/title_activity_enable_notification"
-            android:taskAffinity="">
-        </activity>
-
         <service
             android:name=".BigTextIntentService"
             android:exported="false">
