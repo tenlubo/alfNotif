@@ -14,7 +14,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
