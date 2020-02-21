@@ -1,9 +1,4 @@
-package online.fixu.bsp.alf.notif;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-import androidx.core.content.ContextCompat;
+package online.fixu.bsp.alf;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -12,7 +7,19 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.RelativeLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
+
+import online.fixu.bsp.alf.notif.BigTextIntentService;
+import online.fixu.bsp.alf.notif.BigTextMainActivity;
+import online.fixu.bsp.alf.notif.GlobalNotificationBuilder;
+import online.fixu.bsp.alf.notif.MockDatabase;
+import online.fixu.bsp.alf.notif.NotificationUtil;
+import online.fixu.bsp.alf.notif.R;
+import online.fixu.bsp.alf.worker.AlfrescoTaskWorker;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private NotificationManagerCompat mNotificationManagerCompat;
 
+    private AlfrescoTaskWorker mAlfrescoTaskWorker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +39,15 @@ public class MainActivity extends AppCompatActivity {
 
         mNotificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
 
+        mAlfrescoTaskWorker = AlfrescoTaskWorker.getInstance();
+
     }
 
     public void onClick(View view) {
 
         Log.d(TAG, "onClick()");
+
+        mAlfrescoTaskWorker.getTaskData();
 
         boolean areNotificationsEnabled = mNotificationManagerCompat.areNotificationsEnabled();
 

@@ -20,6 +20,8 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Bundle;
 
+import online.fixu.bsp.alf.MainActivity;
+
 /**
  * Template class meant to include functionality for your Reminder/Alarm App. (This project's main
  * focus is on Notification Styles.)
