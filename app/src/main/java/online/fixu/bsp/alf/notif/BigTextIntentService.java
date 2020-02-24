@@ -41,9 +41,9 @@ public class BigTextIntentService extends IntentService {
     private static final String TAG = "BigTextService";
 
     public static final String ACTION_DISMISS =
-            "com.example.android.wearable.wear.wearnotifications.handlers.action.DISMISS";
+            "online.fixu.bsp.alf.notif.handlers.action.DISMISS";
     public static final String ACTION_SNOOZE =
-            "com.example.android.wearable.wear.wearnotifications.handlers.action.SNOOZE";
+            "online.fixu.bsp.alf.notif.handlers.action.SNOOZE";
 
     private static final long SNOOZE_TIME = TimeUnit.SECONDS.toMillis(5);
 
